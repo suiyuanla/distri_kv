@@ -9,6 +9,8 @@
 #include <grpcpp/health_check_service_interface.h>
 #include <grpcpp/server_builder.h>
 #include <grpcpp/support/status.h>
+
+#include <map>
 #include <string>
 
 #include "kv_opt.grpc.pb.h"
@@ -24,6 +26,8 @@ class KV_opt_Impl final : public kv_operate::KV_server::Service {
     grpc::Status Query_KV(grpc::ServerContext* context,
                           const kv_operate::Query_Req* request,
                           kv_operate::Reply* response) override;
+
+    std::map<std::string, std::string> kv_map;
 };
 
 class KV_opt_client {
@@ -31,8 +35,8 @@ class KV_opt_client {
     KV_opt_client(std::shared_ptr<grpc::Channel> channel)
         : stub_(kv_operate::KV_server::NewStub(channel)) {}
 
-    std::string Add_KV(const std::string& kv_json);
-    std::string Delete_KV(const std::string& key);
+    bool Add_KV(const std::string& kv_json);
+    int Delete_KV(const std::string& key);
     std::string Query_KV(const std::string& key);
 
    private:

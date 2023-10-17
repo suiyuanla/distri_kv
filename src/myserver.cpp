@@ -1,12 +1,14 @@
 #include <grpcpp/server_builder.h>
-#include <httplib.h>
 #include <sys/types.h>
+
 #include <cstdint>
-#include <json.hpp>
 #include <iostream>
 #include <memory>
 #include <string>
+
 #include "KV_opt_impl.h"
+#include "httplib.h"
+#include "json.hpp"
 
 using namespace nlohmann;
 using namespace nlohmann::literals;
@@ -15,25 +17,24 @@ using namespace httplib;
 
 void set_server(httplib::Server &svr, KV_opt_client &kv_client) {
     svr.Post("/", [&](const Request &req, Response &res) {
-        auto body = req.body;
-        // cout << body << endl;
-        auto rep = kv_client.Add_KV(body);
-
-        res.set_content("Post: " + rep, "application/json; charset=utf-8");
+        // cout << req.body << endl;
+        auto rep = kv_client.Add_KV(req.body);
+        // cout << "Add_KV: " << rep << endl;
+        res.set_content("", "application/json; charset=utf-8");
     });
 
     svr.Get("/:key", [&](const Request &req, Response &res) {
         auto key = req.path_params.at("key");
         auto rep = kv_client.Query_KV(key);
 
-        res.set_content("Get: " + rep, "application/json; charset=utf-8");
+        res.set_content(rep, "application/json; charset=utf-8");
     });
 
-    svr.Delete("/:k", [&](const Request &req, Response &res) {
-        auto key = req.path_params.at("k");
+    svr.Delete("/:key", [&](const Request &req, Response &res) {
+        auto key = req.path_params.at("key");
         auto rep = kv_client.Delete_KV(key);
 
-        res.set_content("Delete: " + rep, "application/json; charset=utf-8");
+        res.set_content(to_string(rep), "application/json; charset=utf-8");
     });
 }
 
