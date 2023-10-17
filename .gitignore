@@ -1,6 +1,4 @@
 .vscode
 build
 proto/helloworld*
-proto/*.cc
-proto/*.h
 src/greeter*

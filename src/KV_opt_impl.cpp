@@ -22,13 +22,10 @@ Status KV_opt_Impl::Add_KV(ServerContext* context, const Add_Req* request,
                            Reply* response) {
     json kv_json = json::parse(request->kv_json());
     if (auto it = kv_json.begin(); it != kv_json.end() && it.key() != "") {
-        // std::cout << "Add_Req, " << it.key() << ": " << it.value() <<
-        // std::endl;
         kv_map[it.key()] = it.value().dump();
     } else {
         return Status::CANCELLED;
     }
-    // response->set_res("");
     return Status::OK;
 }
 
@@ -62,13 +59,6 @@ bool KV_opt_client::Add_KV(const std::string& kv_json) {
     Status status = stub_->Add_KV(&context, request, &reply);
 
     return status.ok();
-    // if (status.ok()) {
-    //     return reply.res();
-    // } else {
-    //     std::cout << status.error_code() << ": " << status.error_message()
-    //               << std::endl;
-    //     return "Add RPC failed";
-    // }
 }
 
 int KV_opt_client::Delete_KV(const std::string& key) {
@@ -80,8 +70,6 @@ int KV_opt_client::Delete_KV(const std::string& key) {
     if (status.ok()) {
         return std::stoi(reply.res());
     } else {
-        // std::cout << status.error_code() << ": " << status.error_message()
-        //           << std::endl;
         return 0;
     }
 }
@@ -95,8 +83,6 @@ std::string KV_opt_client::Query_KV(const std::string& key) {
     if (status.ok()) {
         return reply.res();
     } else {
-        // std::cout << status.error_code() << ": " << status.error_message()
-        //           << std::endl;
         return "";
     }
 }
