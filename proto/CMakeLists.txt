@@ -1,4 +1,3 @@
-
 # 找到grpc lib
 find_package(gRPC CONFIG REQUIRED)
 set(grpc_LIBRARIES
@@ -35,6 +34,8 @@ add_library(helloworld STATIC helloworld.pb.cc helloworld.grpc.pb.cc)
 
 # 添加头文件目录
 # target_include_directories(helloworld PRIVATE ${CMAKE_SOURCE_DIR}/proto)
-
 # 链接动态库
 target_link_libraries(helloworld ${grpc_LIBRARIES} ${absl_LIBRARIES})
+
+add_library(kv_opt_grpc STATIC kv_opt.pb.cc kv_opt.grpc.pb.cc)
+target_link_libraries(kv_opt_grpc ${grpc_LIBRARIES} ${absl_LIBRARIES})

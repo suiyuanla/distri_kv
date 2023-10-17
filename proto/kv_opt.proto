@@ -1,20 +1,25 @@
 syntax = "proto3";
-package kv_opt;
+package kv_operate;
 
 // The KV service definition.
 service KV_server {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply) {}
-    // Sends another greeting
-  rpc SayHelloAgain (HelloRequest) returns (HelloReply) {}
+  rpc Add_KV (Add_Req) returns (Reply) {}
+  rpc Delete_KV (Delete_Req) returns (Reply) {}
+  rpc Query_KV (Query_Req) returns (Reply) {}
 }
 
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
+message Add_Req {
+  string kv_json = 1;
 }
 
-// The response message containing the greetings
-message HelloReply {
-  string message = 2;
+message Delete_Req {
+  string key = 1;
+}
+
+message Query_Req {
+  string key = 1;
+}
+
+message Reply {
+  string res = 1;
 }
