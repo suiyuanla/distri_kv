@@ -18,7 +18,8 @@ using namespace httplib;
 
 uint16_t grpc_port[3] = {9090, 9091, 9092};
 uint16_t http_port[3] = {9527, 9528, 9529};
-
+const string grpc_addr[3] = {"myserver0:9090", "myserver1:9091", "myserver2:9092"};
+// const string grpc_addr[3] = {"localhost:9090", "localhost:9091", "localhost:9092"};
 int str_hash(const string &str) {
     int hash = 0;
     for (auto c : str) {
@@ -33,7 +34,8 @@ void set_server(httplib::Server &svr) {
         json kv_json = json::parse(req.body);
         if (auto it = kv_json.begin(); it != kv_json.end()) {
             KV_opt_client kv_client((grpc::CreateChannel(
-                "localhost:" + to_string(grpc_port[str_hash(it.key())]),
+                // "localhost:" + to_string(grpc_port[str_hash(it.key())]),
+                grpc_addr[str_hash(it.key())],
                 grpc::InsecureChannelCredentials())));
             auto rep = kv_client.Add_KV(req.body);
             // cout << "Add_KV: " << rep << endl;
@@ -44,7 +46,8 @@ void set_server(httplib::Server &svr) {
     svr.Get("/:key", [&](const Request &req, Response &res) {
         auto key = req.path_params.at("key");
         KV_opt_client kv_client((grpc::CreateChannel(
-            "localhost:" + to_string(grpc_port[str_hash(key)]),
+            // "localhost:" + to_string(grpc_port[str_hash(key)]),
+            grpc_addr[str_hash(key)],
             grpc::InsecureChannelCredentials())));
         auto rep = kv_client.Query_KV(key);
         if (rep == "") {
@@ -60,7 +63,8 @@ void set_server(httplib::Server &svr) {
     svr.Delete("/:key", [&](const Request &req, Response &res) {
         auto key = req.path_params.at("key");
         KV_opt_client kv_client((grpc::CreateChannel(
-            "localhost:" + to_string(grpc_port[str_hash(key)]),
+            // "localhost:" + to_string(grpc_port[str_hash(key)]),
+            grpc_addr[str_hash(key)],
             grpc::InsecureChannelCredentials())));
         auto rep = kv_client.Delete_KV(key);
 
@@ -72,7 +76,8 @@ int main(int argc, char **argv) {
     int index = stoi(argv[1]);
     // GRPC
     std::string server_address =
-        std::string("0.0.0.0:") + std::to_string(grpc_port[index]);
+        // std::string("0.0.0.0:") + std::to_string(grpc_port[index]);
+        grpc_addr[index];
     KV_opt_Impl service;
     grpc::EnableDefaultHealthCheckService(true);
     grpc::reflection::InitProtoReflectionServerBuilderPlugin();
@@ -80,7 +85,7 @@ int main(int argc, char **argv) {
     builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
     builder.RegisterService(&service);
     std::unique_ptr<grpc::Server> grpc_svr(builder.BuildAndStart());
-    std::cout << "Grpc Server listening on " << server_address << std::endl;
+    // std::cout << "Grpc Server listening on " << server_address << std::endl;
 
     // HTTP
     httplib::Server http_svr;

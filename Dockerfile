@@ -14,7 +14,8 @@ WORKDIR /app
 RUN cd proto && \
     protoc -I=. --cpp_out=. --grpc_out=. --plugin=protoc-gen-grpc=`which grpc_cpp_plugin` kv_opt.proto && \
     cd .. && \
+    rm -rf build &&\
     mkdir build && \
     cd build && \
     cmake .. \
-    && make -j 4
+    && make -j 4 \

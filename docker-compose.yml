@@ -1,0 +1,29 @@
+version: '3'
+services:
+
+  myserver0:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: distri_kv:latest
+    container_name: myserver0
+    ports:
+      - "9527:9527"
+      - "9090:9090"
+    command: ["./build/src/myserver", "0"]
+
+  myserver1:
+    image: distri_kv:latest
+    container_name: myserver1
+    ports:
+      - "9528:9528"
+      - "9091:9091"
+    command: ["./build/src/myserver", "1"]
+
+  myserver2:
+    image: distri_kv:latest
+    container_name: myserver2
+    ports:
+      - "9529:9529"
+      - "9092:9092"
+    command: ["./build/src/myserver", "2"]
