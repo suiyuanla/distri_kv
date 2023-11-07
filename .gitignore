@@ -1,4 +1,8 @@
 .vscode
 build
 proto/helloworld*
+proto/google
+proto/absl
 src/greeter*
+lib
+include/grpc*

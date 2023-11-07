@@ -21,72 +21,17 @@ namespace _pb = ::google::protobuf;
 namespace _pbi = ::google::protobuf::internal;
 namespace _fl = ::google::protobuf::internal::field_layout;
 namespace kv_operate {
-        template <typename>
-PROTOBUF_CONSTEXPR Add_Req::Add_Req(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.kv_json_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
-struct Add_ReqDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Add_ReqDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~Add_ReqDefaultTypeInternal() {}
-  union {
-    Add_Req _instance;
-  };
-};
 
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Add_ReqDefaultTypeInternal _Add_Req_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Delete_Req::Delete_Req(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.key_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
-struct Delete_ReqDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Delete_ReqDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~Delete_ReqDefaultTypeInternal() {}
-  union {
-    Delete_Req _instance;
-  };
-};
+inline constexpr Reply::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : res_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        _cached_size_{0} {}
 
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Delete_ReqDefaultTypeInternal _Delete_Req_default_instance_;
-        template <typename>
-PROTOBUF_CONSTEXPR Query_Req::Query_Req(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.key_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
-struct Query_ReqDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR Query_ReqDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
-  ~Query_ReqDefaultTypeInternal() {}
-  union {
-    Query_Req _instance;
-  };
-};
-
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
-    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Query_ReqDefaultTypeInternal _Query_Req_default_instance_;
-        template <typename>
+template <typename>
 PROTOBUF_CONSTEXPR Reply::Reply(::_pbi::ConstantInitialized)
-    : _impl_{
-      /*decltype(_impl_.res_)*/ {
-          &::_pbi::fixed_address_empty_string,
-          ::_pbi::ConstantInitialized{},
-      },
-      /*decltype(_impl_._cached_size_)*/ {},
-    } {}
+    : _impl_(::_pbi::ConstantInitialized()) {}
 struct ReplyDefaultTypeInternal {
   PROTOBUF_CONSTEXPR ReplyDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
   ~ReplyDefaultTypeInternal() {}
@@ -97,6 +42,69 @@ struct ReplyDefaultTypeInternal {
 
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
     PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 ReplyDefaultTypeInternal _Reply_default_instance_;
+
+inline constexpr Query_Req::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : key_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Query_Req::Query_Req(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct Query_ReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Query_ReqDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Query_ReqDefaultTypeInternal() {}
+  union {
+    Query_Req _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Query_ReqDefaultTypeInternal _Query_Req_default_instance_;
+
+inline constexpr Delete_Req::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : key_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Delete_Req::Delete_Req(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct Delete_ReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Delete_ReqDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Delete_ReqDefaultTypeInternal() {}
+  union {
+    Delete_Req _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Delete_ReqDefaultTypeInternal _Delete_Req_default_instance_;
+
+inline constexpr Add_Req::Impl_::Impl_(
+    ::_pbi::ConstantInitialized) noexcept
+      : kv_json_(
+            &::google::protobuf::internal::fixed_address_empty_string,
+            ::_pbi::ConstantInitialized()),
+        _cached_size_{0} {}
+
+template <typename>
+PROTOBUF_CONSTEXPR Add_Req::Add_Req(::_pbi::ConstantInitialized)
+    : _impl_(::_pbi::ConstantInitialized()) {}
+struct Add_ReqDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Add_ReqDefaultTypeInternal() : _instance(::_pbi::ConstantInitialized{}) {}
+  ~Add_ReqDefaultTypeInternal() {}
+  union {
+    Add_Req _instance;
+  };
+};
+
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT
+    PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Add_ReqDefaultTypeInternal _Add_Req_default_instance_;
 }  // namespace kv_operate
 static ::_pb::Metadata file_level_metadata_kv_5fopt_2eproto[4];
 static constexpr const ::_pb::EnumDescriptor**
@@ -215,35 +223,32 @@ Add_Req::Add_Req(::google::protobuf::Arena* arena)
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:kv_operate.Add_Req)
 }
-Add_Req::Add_Req(const Add_Req& from) : ::google::protobuf::Message() {
+inline PROTOBUF_NDEBUG_INLINE Add_Req::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : kv_json_(arena, from.kv_json_),
+        _cached_size_{0} {}
+
+Add_Req::Add_Req(
+    ::google::protobuf::Arena* arena,
+    const Add_Req& from)
+    : ::google::protobuf::Message(arena) {
   Add_Req* const _this = this;
   (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.kv_json_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
-  _impl_.kv_json_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.kv_json_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_kv_json().empty()) {
-    _this->_impl_.kv_json_.Set(from._internal_kv_json(), _this->GetArenaForAllocation());
-  }
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
 
   // @@protoc_insertion_point(copy_constructor:kv_operate.Add_Req)
 }
+inline PROTOBUF_NDEBUG_INLINE Add_Req::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : kv_json_(arena),
+        _cached_size_{0} {}
+
 inline void Add_Req::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_.kv_json_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _impl_.kv_json_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.kv_json_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  new (&_impl_) Impl_(internal_visibility(), arena);
 }
 Add_Req::~Add_Req() {
   // @@protoc_insertion_point(destructor:kv_operate.Add_Req)
@@ -251,15 +256,14 @@ Add_Req::~Add_Req() {
   SharedDtor();
 }
 inline void Add_Req::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArena() == nullptr);
   _impl_.kv_json_.Destroy();
-}
-void Add_Req::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _impl_.~Impl_();
 }
 
 PROTOBUF_NOINLINE void Add_Req::Clear() {
 // @@protoc_insertion_point(message_clear_start:kv_operate.Add_Req)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -350,11 +354,12 @@ const ::_pbi::TcParseTable<0, 1, 0, 34, 2> Add_Req::_table_ = {
 }
 
 const ::google::protobuf::Message::ClassData Add_Req::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
-    Add_Req::MergeImpl
+    Add_Req::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::google::protobuf::Message::ClassData*Add_Req::GetClassData() const { return &_class_data_; }
-
+const ::google::protobuf::Message::ClassData* Add_Req::GetClassData() const {
+  return &_class_data_;
+}
 
 void Add_Req::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<Add_Req*>(&to_msg);
@@ -381,13 +386,15 @@ PROTOBUF_NOINLINE bool Add_Req::IsInitialized() const {
   return true;
 }
 
-void Add_Req::InternalSwap(Add_Req* other) {
+::_pbi::CachedSize* Add_Req::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Add_Req::InternalSwap(Add_Req* PROTOBUF_RESTRICT other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.kv_json_, lhs_arena,
-                                       &other->_impl_.kv_json_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.kv_json_, &other->_impl_.kv_json_, arena);
 }
 
 ::google::protobuf::Metadata Add_Req::GetMetadata() const {
@@ -406,35 +413,32 @@ Delete_Req::Delete_Req(::google::protobuf::Arena* arena)
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:kv_operate.Delete_Req)
 }
-Delete_Req::Delete_Req(const Delete_Req& from) : ::google::protobuf::Message() {
+inline PROTOBUF_NDEBUG_INLINE Delete_Req::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : key_(arena, from.key_),
+        _cached_size_{0} {}
+
+Delete_Req::Delete_Req(
+    ::google::protobuf::Arena* arena,
+    const Delete_Req& from)
+    : ::google::protobuf::Message(arena) {
   Delete_Req* const _this = this;
   (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.key_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), _this->GetArenaForAllocation());
-  }
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
 
   // @@protoc_insertion_point(copy_constructor:kv_operate.Delete_Req)
 }
+inline PROTOBUF_NDEBUG_INLINE Delete_Req::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : key_(arena),
+        _cached_size_{0} {}
+
 inline void Delete_Req::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.key_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  new (&_impl_) Impl_(internal_visibility(), arena);
 }
 Delete_Req::~Delete_Req() {
   // @@protoc_insertion_point(destructor:kv_operate.Delete_Req)
@@ -442,15 +446,14 @@ Delete_Req::~Delete_Req() {
   SharedDtor();
 }
 inline void Delete_Req::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArena() == nullptr);
   _impl_.key_.Destroy();
-}
-void Delete_Req::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _impl_.~Impl_();
 }
 
 PROTOBUF_NOINLINE void Delete_Req::Clear() {
 // @@protoc_insertion_point(message_clear_start:kv_operate.Delete_Req)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -541,11 +544,12 @@ const ::_pbi::TcParseTable<0, 1, 0, 33, 2> Delete_Req::_table_ = {
 }
 
 const ::google::protobuf::Message::ClassData Delete_Req::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
-    Delete_Req::MergeImpl
+    Delete_Req::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::google::protobuf::Message::ClassData*Delete_Req::GetClassData() const { return &_class_data_; }
-
+const ::google::protobuf::Message::ClassData* Delete_Req::GetClassData() const {
+  return &_class_data_;
+}
 
 void Delete_Req::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<Delete_Req*>(&to_msg);
@@ -572,13 +576,15 @@ PROTOBUF_NOINLINE bool Delete_Req::IsInitialized() const {
   return true;
 }
 
-void Delete_Req::InternalSwap(Delete_Req* other) {
+::_pbi::CachedSize* Delete_Req::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Delete_Req::InternalSwap(Delete_Req* PROTOBUF_RESTRICT other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.key_, lhs_arena,
-                                       &other->_impl_.key_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.key_, &other->_impl_.key_, arena);
 }
 
 ::google::protobuf::Metadata Delete_Req::GetMetadata() const {
@@ -597,35 +603,32 @@ Query_Req::Query_Req(::google::protobuf::Arena* arena)
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:kv_operate.Query_Req)
 }
-Query_Req::Query_Req(const Query_Req& from) : ::google::protobuf::Message() {
+inline PROTOBUF_NDEBUG_INLINE Query_Req::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : key_(arena, from.key_),
+        _cached_size_{0} {}
+
+Query_Req::Query_Req(
+    ::google::protobuf::Arena* arena,
+    const Query_Req& from)
+    : ::google::protobuf::Message(arena) {
   Query_Req* const _this = this;
   (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.key_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_key().empty()) {
-    _this->_impl_.key_.Set(from._internal_key(), _this->GetArenaForAllocation());
-  }
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
 
   // @@protoc_insertion_point(copy_constructor:kv_operate.Query_Req)
 }
+inline PROTOBUF_NDEBUG_INLINE Query_Req::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : key_(arena),
+        _cached_size_{0} {}
+
 inline void Query_Req::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_.key_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _impl_.key_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.key_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  new (&_impl_) Impl_(internal_visibility(), arena);
 }
 Query_Req::~Query_Req() {
   // @@protoc_insertion_point(destructor:kv_operate.Query_Req)
@@ -633,15 +636,14 @@ Query_Req::~Query_Req() {
   SharedDtor();
 }
 inline void Query_Req::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArena() == nullptr);
   _impl_.key_.Destroy();
-}
-void Query_Req::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _impl_.~Impl_();
 }
 
 PROTOBUF_NOINLINE void Query_Req::Clear() {
 // @@protoc_insertion_point(message_clear_start:kv_operate.Query_Req)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -732,11 +734,12 @@ const ::_pbi::TcParseTable<0, 1, 0, 32, 2> Query_Req::_table_ = {
 }
 
 const ::google::protobuf::Message::ClassData Query_Req::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
-    Query_Req::MergeImpl
+    Query_Req::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::google::protobuf::Message::ClassData*Query_Req::GetClassData() const { return &_class_data_; }
-
+const ::google::protobuf::Message::ClassData* Query_Req::GetClassData() const {
+  return &_class_data_;
+}
 
 void Query_Req::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<Query_Req*>(&to_msg);
@@ -763,13 +766,15 @@ PROTOBUF_NOINLINE bool Query_Req::IsInitialized() const {
   return true;
 }
 
-void Query_Req::InternalSwap(Query_Req* other) {
+::_pbi::CachedSize* Query_Req::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Query_Req::InternalSwap(Query_Req* PROTOBUF_RESTRICT other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.key_, lhs_arena,
-                                       &other->_impl_.key_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.key_, &other->_impl_.key_, arena);
 }
 
 ::google::protobuf::Metadata Query_Req::GetMetadata() const {
@@ -788,35 +793,32 @@ Reply::Reply(::google::protobuf::Arena* arena)
   SharedCtor(arena);
   // @@protoc_insertion_point(arena_constructor:kv_operate.Reply)
 }
-Reply::Reply(const Reply& from) : ::google::protobuf::Message() {
+inline PROTOBUF_NDEBUG_INLINE Reply::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility, ::google::protobuf::Arena* arena,
+    const Impl_& from)
+      : res_(arena, from.res_),
+        _cached_size_{0} {}
+
+Reply::Reply(
+    ::google::protobuf::Arena* arena,
+    const Reply& from)
+    : ::google::protobuf::Message(arena) {
   Reply* const _this = this;
   (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_.res_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
   _internal_metadata_.MergeFrom<::google::protobuf::UnknownFieldSet>(
       from._internal_metadata_);
-  _impl_.res_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.res_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_res().empty()) {
-    _this->_impl_.res_.Set(from._internal_res(), _this->GetArenaForAllocation());
-  }
+  new (&_impl_) Impl_(internal_visibility(), arena, from._impl_);
 
   // @@protoc_insertion_point(copy_constructor:kv_operate.Reply)
 }
+inline PROTOBUF_NDEBUG_INLINE Reply::Impl_::Impl_(
+    ::google::protobuf::internal::InternalVisibility visibility,
+    ::google::protobuf::Arena* arena)
+      : res_(arena),
+        _cached_size_{0} {}
+
 inline void Reply::SharedCtor(::_pb::Arena* arena) {
-  (void)arena;
-  new (&_impl_) Impl_{
-      decltype(_impl_.res_){},
-      /*decltype(_impl_._cached_size_)*/ {},
-  };
-  _impl_.res_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-        _impl_.res_.Set("", GetArenaForAllocation());
-  #endif  // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  new (&_impl_) Impl_(internal_visibility(), arena);
 }
 Reply::~Reply() {
   // @@protoc_insertion_point(destructor:kv_operate.Reply)
@@ -824,15 +826,14 @@ Reply::~Reply() {
   SharedDtor();
 }
 inline void Reply::SharedDtor() {
-  ABSL_DCHECK(GetArenaForAllocation() == nullptr);
+  ABSL_DCHECK(GetArena() == nullptr);
   _impl_.res_.Destroy();
-}
-void Reply::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
+  _impl_.~Impl_();
 }
 
 PROTOBUF_NOINLINE void Reply::Clear() {
 // @@protoc_insertion_point(message_clear_start:kv_operate.Reply)
+  PROTOBUF_TSAN_WRITE(&_impl_._tsan_detect_race);
   ::uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -923,11 +924,12 @@ const ::_pbi::TcParseTable<0, 1, 0, 28, 2> Reply::_table_ = {
 }
 
 const ::google::protobuf::Message::ClassData Reply::_class_data_ = {
-    ::google::protobuf::Message::CopyWithSourceCheck,
-    Reply::MergeImpl
+    Reply::MergeImpl,
+    nullptr,  // OnDemandRegisterArenaDtor
 };
-const ::google::protobuf::Message::ClassData*Reply::GetClassData() const { return &_class_data_; }
-
+const ::google::protobuf::Message::ClassData* Reply::GetClassData() const {
+  return &_class_data_;
+}
 
 void Reply::MergeImpl(::google::protobuf::Message& to_msg, const ::google::protobuf::Message& from_msg) {
   auto* const _this = static_cast<Reply*>(&to_msg);
@@ -954,13 +956,15 @@ PROTOBUF_NOINLINE bool Reply::IsInitialized() const {
   return true;
 }
 
-void Reply::InternalSwap(Reply* other) {
+::_pbi::CachedSize* Reply::AccessCachedSize() const {
+  return &_impl_._cached_size_;
+}
+void Reply::InternalSwap(Reply* PROTOBUF_RESTRICT other) {
   using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
+  auto* arena = GetArena();
+  ABSL_DCHECK_EQ(arena, other->GetArena());
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.res_, lhs_arena,
-                                       &other->_impl_.res_, rhs_arena);
+  ::_pbi::ArenaStringPtr::InternalSwap(&_impl_.res_, &other->_impl_.res_, arena);
 }
 
 ::google::protobuf::Metadata Reply::GetMetadata() const {
